@@ -48,3 +48,13 @@ yay -S picotool openocd-picoprobe
 * http://derekmolloy.ie/hello-world-introductions-to-cmake/
 * https://medium.com/@onur.dundar1/cmake-tutorial-585dd180109b
 
+### FreeRTOS
+* "Mastering the FreeRTOS Real Time Kernel - a Hands On Tutorial Guide" [online](https://www.freertos.org/fr-content-src/uploads/2018/07/161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf)
+* https://www.freertos.org/
+* https://github.com/FreeRTOS/FreeRTOS-Kernel
+* https://github.com/FreeRTOS/FreeRTOS-SMP-Demos/tree/main/FreeRTOS/Demo/CORTEX_M0%2B_RP2040
+* https://lochnerweb.de/freertos-on-raspberry-pi-pico
+* https://github.com/PicoCPP/RPI-pico-FreeRTOS
+* https://github.com/yunkya2/pico-freertos-sample
+* https://github.com/holochn/pi_pico_tasks
+
