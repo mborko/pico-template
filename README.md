@@ -3,7 +3,7 @@ Raspberry Pi RP2040 Template for fast and easy development structure
 
 ## Pico SDK
 
-```
+```bash
 git clone https://github.com/raspberrypi/pico-sdk.git
 cd pico-sdk
 git submodule update --init
@@ -15,32 +15,57 @@ echo export PICO_SDK_PATH=$PWD >> ~/.bashrc
 ## Packages
 
 ### Debian based
-```
+```bash
 apt update && apt install -y cmake make gcc openssl libssl-dev cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib 
 ```
 
 ### Arch
-```
+```bash
 pacman -S arm-none-eabi-gcc arm-none-eabi-binutils arm-none-eabi-newlib cmake autoconf git
 yay -S picotool openocd-picoprobe
 ```
 
 ## Programming
 
-1. get SDK
-2. cmake example
-3. flash it
-4. debug it
-5. be happy!
+        1. get SDK
+        2. cmake example
+        3. flash it
+        4. debug it
+        5. be happy!
+
+### Programming examples on your Pico
+First of all check the `CMakeLists.txt` File, if the desired subdirectories are included (e.g. `add_subdirectory(blink)`) and execute the following commands in this repository:
+```bash
+rm build -rf
+mkdir build && cd build
+cmake ..
+make
+```
+
+Afterwards you can mount your Pico as described in Chapter 3.2.2 of "Getting Started with Raspberry Pi Pico" [1]. _"Removing power from the board does not remove the code. When the board is reattached to power, the code you have just loaded will begin running again. If you want to upload new code to the board (and overwrite whatever was already on there), press and hold the BOOTSEL button when applying power to put the board into Mass Storage mode."_
+
+```bash
+$ sudo dmesg | tail
+[ 371.973555] sd 0:0:0:0: [sda] Attached SCSI removable disk
+$ sudo mkdir -p /mnt/pico
+$ sudo mount /dev/sda1 /mnt/pico
+$ ls /mnt/pico/
+INDEX.HTM INFO_UF2.TXT
+$ sudo cp blink/blink.uf2 /mnt/pico
+$ sudo sync
+```
+
+### FreeRTOS Examples
+The FreeRTOS Examples need the Kernel Sources, so don't forget to load the submodule with `git submodule update --init` in this repository. This will load the Kernel into `freertos/FreeRTOS/FreeRTOS-Kernel`.
 
 ## Resources
 * https://www.raspberrypi.org/documentation/rp2040/getting-started/
 * https://www.raspberrypi.org/documentation/rp2040/getting-started/#board-specifications
 
 ### Pico Datasheets
-* https://datasheets.raspberrypi.org/
+* [1]  "Getting Started with Raspberry Pi Pico" [raspberry.org](https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf)
+* [2] " Raspberry Pi Datasheets" [raspberry.org](https://datasheets.raspberrypi.org/)
 * https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-faq.pdf
-* https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf
 * https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-c-sdk.pdf
 
 ### CMake
@@ -49,7 +74,7 @@ yay -S picotool openocd-picoprobe
 * https://medium.com/@onur.dundar1/cmake-tutorial-585dd180109b
 
 ### FreeRTOS
-* "Mastering the FreeRTOS Real Time Kernel - a Hands On Tutorial Guide" [online](https://www.freertos.org/fr-content-src/uploads/2018/07/161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf)
+* [3] "Mastering the FreeRTOS Real Time Kernel - a Hands On Tutorial Guide" [freertos.org](https://www.freertos.org/fr-content-src/uploads/2018/07/161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf)
 * https://www.freertos.org/
 * https://github.com/FreeRTOS/FreeRTOS-Kernel
 * https://github.com/FreeRTOS/FreeRTOS-SMP-Demos/tree/main/FreeRTOS/Demo/CORTEX_M0%2B_RP2040
