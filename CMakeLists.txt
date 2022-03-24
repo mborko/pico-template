@@ -24,6 +24,8 @@ add_subdirectory(blink)
 # Add hello world example
 add_subdirectory(hello)
 
+add_subdirectory(mpu6050_i2c)
+
 # Add FreeRTOS examples
 add_subdirectory(freertos)
 
