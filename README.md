@@ -1,4 +1,4 @@
-# pico-template
+# Raspberry Pi RP2040 Template
 Raspberry Pi RP2040 Template for fast and easy development structure
 
 ## Pico SDK
@@ -16,7 +16,7 @@ echo export PICO_SDK_PATH=$PWD >> ~/.bashrc
 
 ### Debian based
 ```bash
-apt update && apt install -y cmake make gcc openssl libssl-dev cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib 
+apt update && apt install -y cmake make gcc g++ openssl libssl-dev cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib 
 ```
 
 ### Arch
