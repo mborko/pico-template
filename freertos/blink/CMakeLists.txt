@@ -1,5 +1,3 @@
-add_subdirectory(pico-cpp)
-
 add_executable(freertos_blink
   main.cpp 
   )
