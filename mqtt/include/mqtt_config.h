@@ -4,7 +4,7 @@
 #define MQTT_CLIENT_ID "pico"
 #define MQTT_CLIENT_USER "mqtt"
 #define MQTT_CLIENT_PW ""
-#define MQTT_WILL_TOPIC ""
+#define MQTT_WILL_TOPIC "TEST"
 
 // Default Values
 #ifdef LOCAL_IOT
