@@ -24,8 +24,8 @@ include(example_auto_set_url.cmake)
 # Add blink example
 add_subdirectory(blink)
 
-# Add hello world example
-#add_subdirectory(hello)
+# Add hello world examples
+add_subdirectory(hello)
 
 # Add hardware examples
 #add_subdirectory(mpu6050_i2c)
