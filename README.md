@@ -59,14 +59,12 @@ $ sudo sync
 The FreeRTOS Examples need the Kernel Sources, so don't forget to load the submodule with `git submodule update --init` in this repository. This will load the Kernel into `freertos/FreeRTOS/FreeRTOS-Kernel`.
 
 ## Resources
-* https://www.raspberrypi.org/documentation/rp2040/getting-started/
-* https://www.raspberrypi.org/documentation/rp2040/getting-started/#board-specifications
+* "The official documentation for Raspberry Pi computers and microcontrollers" [raspberrypi.com](https://www.raspberrypi.com/documentation/microcontrollers/)
 
 ### Pico Datasheets
 * [1] "Getting Started with Raspberry Pi Pico" [raspberrypi.com](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
 * [2] "Raspberry Pi Datasheets" [raspberrypi.com](https://datasheets.raspberrypi.com/)
-* https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-faq.pdf
-* https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-c-sdk.pdf
+* https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf
 
 ### CMake
 * https://cmake.org/cmake/help/latest/guide/tutorial/index.html
