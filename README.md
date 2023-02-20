@@ -63,8 +63,9 @@ The FreeRTOS Examples need the Kernel Sources, so don't forget to load the submo
 * https://www.raspberrypi.org/documentation/rp2040/getting-started/#board-specifications
 
 ### Pico Datasheets
-* [1]  "Getting Started with Raspberry Pi Pico" [raspberry.org](https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf)
-* [2] " Raspberry Pi Datasheets" [raspberry.org](https://datasheets.raspberrypi.org/)
+* [1] "Getting Started with Raspberry Pi Pico" [raspberrypi.com](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
+* [2] "Raspberry Pi Datasheets" [raspberrypi.com](https://datasheets.raspberrypi.com/)
+* [3] "Connecting to the Internet with Raspberry Pi Pico W" [raspberrypi.com](https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf)
 * https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-faq.pdf
 * https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-c-sdk.pdf
 
@@ -86,4 +87,9 @@ The FreeRTOS Examples need the Kernel Sources, so don't forget to load the submo
 ### CAN
 * https://github.com/adamczykpiotr/pico-mcp2515
 * https://github.com/a-kipp/RP2040-CAN-Driver
+
+### MQTT with Pico W
+* https://github.com/cniles/picow-iot
+* https://www.nongnu.org/lwip/2_1_x/group__mqtt.html
+* https://www.elektronik-kompendium.de/sites/raspberry-pi/2709071.htm
 
