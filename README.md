@@ -83,3 +83,7 @@ The FreeRTOS Examples need the Kernel Sources, so don't forget to load the submo
 * https://github.com/yunkya2/pico-freertos-sample
 * https://github.com/holochn/pi_pico_tasks
 
+### CAN
+* https://github.com/adamczykpiotr/pico-mcp2515
+* https://github.com/a-kipp/RP2040-CAN-Driver
+
