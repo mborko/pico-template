@@ -29,6 +29,8 @@ add_subdirectory(mpu6050_i2c)
 # Add FreeRTOS examples
 add_subdirectory(freertos)
 
+add_subdirectory(ampel)
+
 add_compile_options(-Wall
         -Wno-format          # int != int32_t as far as the compiler is concerned because gcc has int32_t as long int
         -Wno-unused-function # we have some for the docs that aren't called
