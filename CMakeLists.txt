@@ -27,6 +27,9 @@ add_subdirectory(blink)
 # Add hello world examples
 add_subdirectory(hello)
 
+# Add ampel example
+add_subdirectory(ampel)
+
 # Add hardware examples
 #add_subdirectory(mpu6050_i2c)
 #add_subdirectory(mcp2515_can)
