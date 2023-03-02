@@ -2,6 +2,22 @@
 
 #define COUNT_OF(x) ((sizeof(x) / sizeof(0 [x])) / ((size_t)(!(sizeof(x) % sizeof(0 [x]))))) /* NOLINT(readability-misplaced-array-index) */
 
+#define LIST_OF_STATES \
+    X(YELLOW_BLINKING, yellow_blinking) \
+    X(YELLOW,          yellow         ) \
+    X(RED,             red            ) \
+    X(RED_YELLOW,      red_yellow     ) \
+    X(GREEN,           green          ) \
+    X(GREEN_BLINKING,  green_blinking )
+
+// States enum
+typedef enum __attribute__((packed)) {
+#define X(enum_name, func_name) STATE_##enum_name,
+    LIST_OF_STATES
+#undef X
+    STATE_MAX,
+} State;
+
 typedef void (*State_Function)(void);
 
 void state_yellow_blinking(void);
@@ -11,27 +27,14 @@ void state_red_yellow(void);
 void state_green(void);
 void state_green_blinking(void);
 
-typedef enum __attribute__((packed)) {
-    STATE_YELLOW_BLINKING,
-    STATE_YELLOW,
-    STATE_RED,
-    STATE_RED_YELLOW,
-    STATE_GREEN,
-    STATE_GREEN_BLINKING,
-
-    STATE_MAX,
-} State;
+// Function pointer array
+static State_Function state_functions[STATE_MAX] = {
+#define X(enum_name, func_name) [STATE_##enum_name] = state_##func_name,
+    LIST_OF_STATES
+#undef X
+};
 
 static State state;
-
-static State_Function state_functions[STATE_MAX] = {
-    [STATE_YELLOW_BLINKING] = state_yellow_blinking,
-    [STATE_YELLOW]          = state_yellow,
-    [STATE_RED]             = state_red,
-    [STATE_RED_YELLOW]      = state_red_yellow,
-    [STATE_GREEN]           = state_green,
-    [STATE_GREEN_BLINKING]  = state_green_blinking,
-};
 
 typedef enum {
     LIGHT_RED,
