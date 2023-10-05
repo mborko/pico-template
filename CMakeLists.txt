@@ -21,18 +21,12 @@ pico_sdk_init()
 
 include(example_auto_set_url.cmake)
 
-# Add blink example
 add_subdirectory(blink)
-
-# Add hello world examples
-add_subdirectory(hello)
-
-# Add hardware examples
+#add_subdirectory(hello)
 #add_subdirectory(mpu6050_i2c)
 #add_subdirectory(mcp2515_can)
-
-# Add MQTT Example
-add_subdirectory(mqtt)
+#add_subdirectory(mqtt)
+#add_subdirectory(spi_master_slave)
 
 # Add FreeRTOS examples
 #add_subdirectory(freertos)

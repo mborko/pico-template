@@ -1,9 +1,12 @@
-add_executable(blink
-        blink.c
-        )
-
-# pull in common dependencies
-target_link_libraries(blink pico_stdlib)
+if(PICO_BOARD STREQUAL "pico")
+  add_executable(blink blink.c)
+  # pull in common dependencies
+  target_link_libraries(blink pico_stdlib)
+elseif(PICO_BOARD STREQUAL "pico_w")
+  add_executable(blink picow_blink.c)
+  # pull in common dependencies
+  target_link_libraries(blink pico_stdlib pico_cyw43_arch_none)
+endif()
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(blink)
