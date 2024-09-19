@@ -25,6 +25,13 @@ pacman -S arm-none-eabi-gcc arm-none-eabi-binutils arm-none-eabi-newlib cmake au
 yay -S picotool openocd-picoprobe
 ```
 
+### MacOS
+```bash
+brew install cmake
+brew tap ArmMbed/homebrew-formulae
+brew install arm-none-eabi-gcc
+```
+
 ## Programming
 
         1. get SDK
